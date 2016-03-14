@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="AlunoCimatec.Cursos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AlunoCimatec"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Aluno Cimatec" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Cursos" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" SelectionChanged="TextBlock_SelectionChanged"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" HorizontalAlignment="Center">
+
+            <GridView x:Name="GridView" ItemClick="GridView_ItemClick" SelectionChanged="GridView_SelectionChanged" IsItemClickEnabled="True" >
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+
+                                <StackPanel>
+                                    <Rectangle Width="175" Height="175" Fill="{StaticResource PhoneAccentBrush }" Margin="5"/>
+                                    <TextBlock HorizontalAlignment="Center"                                               
+                                                   Text="{Binding InicialCurso}" FontSize="60" FontWeight="Bold" Style="{ThemeResource TitleTextBlockStyle}"  Margin="0,-140,0,0"/>
+                                    <Border Background="White" Width="175" Height="30" Margin="0,-40,0,0">
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" 
+                                                   Text="{Binding Nome}" FontSize="15" Foreground="Black"/>
+                                    </Border>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+
+        </Grid>
+    </Grid>
+</Page>
