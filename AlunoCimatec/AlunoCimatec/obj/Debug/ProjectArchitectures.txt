@@ -1,1 +1,1 @@
-\\psf\Home\Documents\Visual Studio 2015\Projects\Aluno\AlunoCimatec\AlunoCimatec\AlunoCimatec.csproj;neutral
+F:\cimatec\alunocimatec\AlunoCimatec\AlunoCimatec\AlunoCimatec.csproj;neutral

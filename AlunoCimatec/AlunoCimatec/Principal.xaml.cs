@@ -150,11 +150,7 @@ namespace AlunoCimatec
         {
             Model.Disciplinas di = e.ClickedItem as Model.Disciplinas;
 
-            this.Frame.Navigate(typeof(DetalheDisciplina), di);
-
-            //var flyout = new Flyout();
-            //flyout.Content = new TextBlock { Text = di.Nome + "  - " + di.Professor };
-            //flyout.ShowAt(this as FrameworkElement);
+             this.Frame.Navigate(typeof(DisciplinaPivot), di);
         }
 
 

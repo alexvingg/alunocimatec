@@ -95,6 +95,9 @@
     <Compile Include="DetalheDisciplina.xaml.cs">
       <DependentUpon>DetalheDisciplina.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DisciplinaPivot.xaml.cs">
+      <DependentUpon>DisciplinaPivot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetalheDisciplina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisciplinaPivot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

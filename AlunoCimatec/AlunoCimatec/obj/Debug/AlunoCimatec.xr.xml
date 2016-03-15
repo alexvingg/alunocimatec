@@ -69,6 +69,14 @@
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="AlunoCimatec.Cursos" />
     <RootType FullName="AlunoCimatec.DetalheDisciplina" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
+      <RootProperty Name="Header" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="AlunoCimatec.DisciplinaPivot" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
