@@ -124,7 +124,7 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[12];
+            _typeNameTable = new string[13];
             _typeNameTable[0] = "AlunoCimatec.Cursos";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -134,11 +134,12 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
             _typeNameTable[6] = "Object";
             _typeNameTable[7] = "String";
             _typeNameTable[8] = "AlunoCimatec.DetalheDisciplina";
-            _typeNameTable[9] = "AlunoCimatec.Login";
-            _typeNameTable[10] = "AlunoCimatec.MainPage";
-            _typeNameTable[11] = "AlunoCimatec.Principal";
+            _typeNameTable[9] = "AlunoCimatec.DisciplinaPivot";
+            _typeNameTable[10] = "AlunoCimatec.Login";
+            _typeNameTable[11] = "AlunoCimatec.MainPage";
+            _typeNameTable[12] = "AlunoCimatec.Principal";
 
-            _typeTable = new global::System.Type[12];
+            _typeTable = new global::System.Type[13];
             _typeTable[0] = typeof(global::AlunoCimatec.Cursos);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -148,9 +149,10 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
             _typeTable[6] = typeof(global::System.Object);
             _typeTable[7] = typeof(global::System.String);
             _typeTable[8] = typeof(global::AlunoCimatec.DetalheDisciplina);
-            _typeTable[9] = typeof(global::AlunoCimatec.Login);
-            _typeTable[10] = typeof(global::AlunoCimatec.MainPage);
-            _typeTable[11] = typeof(global::AlunoCimatec.Principal);
+            _typeTable[9] = typeof(global::AlunoCimatec.DisciplinaPivot);
+            _typeTable[10] = typeof(global::AlunoCimatec.Login);
+            _typeTable[11] = typeof(global::AlunoCimatec.MainPage);
+            _typeTable[12] = typeof(global::AlunoCimatec.Principal);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -188,9 +190,10 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
         private object Activate_0_Cursos() { return new global::AlunoCimatec.Cursos(); }
         private object Activate_5_ObservableDictionary() { return new global::AlunoCimatec.Common.ObservableDictionary(); }
         private object Activate_8_DetalheDisciplina() { return new global::AlunoCimatec.DetalheDisciplina(); }
-        private object Activate_9_Login() { return new global::AlunoCimatec.Login(); }
-        private object Activate_10_MainPage() { return new global::AlunoCimatec.MainPage(); }
-        private object Activate_11_Principal() { return new global::AlunoCimatec.Principal(); }
+        private object Activate_9_DisciplinaPivot() { return new global::AlunoCimatec.DisciplinaPivot(); }
+        private object Activate_10_Login() { return new global::AlunoCimatec.Login(); }
+        private object Activate_11_MainPage() { return new global::AlunoCimatec.MainPage(); }
+        private object Activate_12_Principal() { return new global::AlunoCimatec.Principal(); }
         private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -262,25 +265,34 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  AlunoCimatec.Login
+            case 9:   //  AlunoCimatec.DisciplinaPivot
                 userType = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_Login;
+                userType.Activator = Activate_9_DisciplinaPivot;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  AlunoCimatec.MainPage
+            case 10:   //  AlunoCimatec.Login
                 userType = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_MainPage;
+                userType.Activator = Activate_10_Login;
+                userType.AddMemberName("NavigationHelper");
+                userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  AlunoCimatec.Principal
+            case 11:   //  AlunoCimatec.MainPage
                 userType = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_Principal;
+                userType.Activator = Activate_11_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  AlunoCimatec.Principal
+                userType = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_Principal;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
@@ -311,22 +323,32 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
             var that = (global::AlunoCimatec.DetalheDisciplina)instance;
             return that.DefaultViewModel;
         }
-        private object get_4_Login_NavigationHelper(object instance)
+        private object get_4_DisciplinaPivot_NavigationHelper(object instance)
+        {
+            var that = (global::AlunoCimatec.DisciplinaPivot)instance;
+            return that.NavigationHelper;
+        }
+        private object get_5_DisciplinaPivot_DefaultViewModel(object instance)
+        {
+            var that = (global::AlunoCimatec.DisciplinaPivot)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_6_Login_NavigationHelper(object instance)
         {
             var that = (global::AlunoCimatec.Login)instance;
             return that.NavigationHelper;
         }
-        private object get_5_Login_DefaultViewModel(object instance)
+        private object get_7_Login_DefaultViewModel(object instance)
         {
             var that = (global::AlunoCimatec.Login)instance;
             return that.DefaultViewModel;
         }
-        private object get_6_Principal_NavigationHelper(object instance)
+        private object get_8_Principal_NavigationHelper(object instance)
         {
             var that = (global::AlunoCimatec.Principal)instance;
             return that.NavigationHelper;
         }
-        private object get_7_Principal_DefaultViewModel(object instance)
+        private object get_9_Principal_DefaultViewModel(object instance)
         {
             var that = (global::AlunoCimatec.Principal)instance;
             return that.DefaultViewModel;
@@ -363,28 +385,40 @@ namespace AlunoCimatec.AlunoCimatec_XamlTypeInfo
                 xamlMember.Getter = get_3_DetalheDisciplina_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "AlunoCimatec.DisciplinaPivot.NavigationHelper":
+                userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.DisciplinaPivot");
+                xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AlunoCimatec.Common.NavigationHelper");
+                xamlMember.Getter = get_4_DisciplinaPivot_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AlunoCimatec.DisciplinaPivot.DefaultViewModel":
+                userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.DisciplinaPivot");
+                xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AlunoCimatec.Common.ObservableDictionary");
+                xamlMember.Getter = get_5_DisciplinaPivot_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "AlunoCimatec.Login.NavigationHelper":
                 userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.Login");
                 xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AlunoCimatec.Common.NavigationHelper");
-                xamlMember.Getter = get_4_Login_NavigationHelper;
+                xamlMember.Getter = get_6_Login_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "AlunoCimatec.Login.DefaultViewModel":
                 userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.Login");
                 xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AlunoCimatec.Common.ObservableDictionary");
-                xamlMember.Getter = get_5_Login_DefaultViewModel;
+                xamlMember.Getter = get_7_Login_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "AlunoCimatec.Principal.NavigationHelper":
                 userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.Principal");
                 xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AlunoCimatec.Common.NavigationHelper");
-                xamlMember.Getter = get_6_Principal_NavigationHelper;
+                xamlMember.Getter = get_8_Principal_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "AlunoCimatec.Principal.DefaultViewModel":
                 userType = (global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlunoCimatec.Principal");
                 xamlMember = new global::AlunoCimatec.AlunoCimatec_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AlunoCimatec.Common.ObservableDictionary");
-                xamlMember.Getter = get_7_Principal_DefaultViewModel;
+                xamlMember.Getter = get_9_Principal_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }
