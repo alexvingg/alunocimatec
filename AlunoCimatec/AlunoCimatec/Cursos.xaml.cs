@@ -28,9 +28,15 @@ namespace AlunoCimatec
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
+        IAsyncAction ass;
+
+
         public Cursos()
         {
             this.InitializeComponent();
+
+            StatusBarProgressIndicator progressbar = StatusBar.GetForCurrentView().ProgressIndicator;
+            ass = progressbar.ShowAsync();
 
             List<Model.Disciplinas> listDs = this.getListDisciplinas();
             List<Model.Curso> lisCur = this.getListCursos();
@@ -150,6 +156,7 @@ namespace AlunoCimatec
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             Model.Curso curso = e.ClickedItem as Model.Curso;
+
             this.Frame.Navigate(typeof(Principal), curso);
         }
 

@@ -29,7 +29,12 @@
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-            <Pivot x:Name="discliplinaPivot">
+            <Pivot x:Name="discliplinaPivot" >
+                <Pivot.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontSize="30"></TextBlock>
+                    </DataTemplate>
+                </Pivot.HeaderTemplate>
                 <PivotItem Header="Notas" x:Name="notasItem">
                     <TextBlock Text="Conteudo 1" ></TextBlock>
                 </PivotItem>
@@ -37,7 +42,20 @@
                     <TextBlock Text="Conteudo 2"></TextBlock>
                 </PivotItem>
                 <PivotItem Header="Imagens" x:Name="imagensItens">
-                    <TextBlock Text="Conteudo 2"></TextBlock>
+
+                    <GridView x:Name="GridView" ItemClick="GridView_ItemClick" SelectionChanged="GridView_SelectionChanged" IsItemClickEnabled="True" >
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+
+                                        <Image x:Name="image" Tapped="image_Tapped" Width="90" Source="{Binding Url}"
+                    VerticalAlignment="Top" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                    
+
                 </PivotItem>
                 <PivotItem Header="Videos" x:Name="videosItens">
                     <TextBlock Text="Conteudo 2" ></TextBlock>

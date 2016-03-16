@@ -27,6 +27,7 @@ namespace AlunoCimatec
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        Popup myPopup;
 
         public DetalheDisciplina()
         {
@@ -67,6 +68,7 @@ namespace AlunoCimatec
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+
         }
 
         /// <summary>
@@ -112,5 +114,53 @@ namespace AlunoCimatec
         }
 
         #endregion
+        Image i;
+        private void image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
+            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+
+            if (myPopup == null)
+            {
+                myPopup = new Popup();
+                LayoutRoot.Children.Add(myPopup);
+                i = new Image
+                {
+                    Source = ((Image)sender).Source,
+                    Stretch = Stretch.Fill,
+                    Height = LayoutRoot.ActualHeight,
+                    Width = LayoutRoot.ActualWidth
+                };
+            
+                i.Tapped += I_Tapped;
+
+                Grid g = new Grid();
+
+                RowDefinition rd = new RowDefinition();
+                g.RowDefinitions.Add(new RowDefinition { Height = new GridLength(LayoutRoot.ActualHeight) });            
+                i.VerticalAlignment = VerticalAlignment.Center;
+                i.HorizontalAlignment = HorizontalAlignment.Center;
+                i.Tapped += I_Tapped;
+                g.Children.Add(i);        
+                myPopup.Child = g;
+                myPopup.IsOpen = true;
+                myPopup.Width = LayoutRoot.Width;
+                myPopup.Height = LayoutRoot.Height;
+            }
+        }
+
+        private void I_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (myPopup != null)
+            {
+                LayoutRoot.Children.Remove(myPopup);
+                myPopup.IsOpen = false;
+                myPopup = null;
+            }
+            
+        }
+
+      
+
     }
 }
