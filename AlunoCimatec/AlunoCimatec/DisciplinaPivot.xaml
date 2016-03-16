@@ -48,7 +48,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" Margin="5">
 
-                                        <Image x:Name="image" Tapped="image_Tapped" Width="90" Source="{Binding Url}"
+                                    <Image x:Name="image" Tapped="image_Tapped" Width="90" Source="{Binding ListImage}"
                     VerticalAlignment="Top" />
                                 </StackPanel>
                             </DataTemplate>

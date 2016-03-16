@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -33,7 +34,8 @@ namespace AlunoCimatec
         {
             this.InitializeComponent();
 
-            Model.ImagemCurso ic = new Model.ImagemCurso { Descricao = "Imagem 1", Url = "http://www.codeguru.com/images/article/19489/020320_06.gif" };
+            Model.ImagemCurso ic = new Model.ImagemCurso { Descricao = "Imagem 1", Url = "http://www.codeguru.com/images/article/19489/020320_06.gif",
+                ListImage = new BitmapImage(new Uri(this.BaseUri, "Assets/Images/FotoAula1.jpg"))};
             //Model.ImagemCurso ic2 = new Model.ImagemCurso { Descricao = "Imagem 2", Url = "http://www.johncleary.net/wp-content/uploads/2013/06/tictactoe1.png" };
             //Model.ImagemCurso ic3 = new Model.ImagemCurso { Descricao = "Imagem 1", Url = "http://www.codeguru.com/images/article/19489/020320_06.gif" };
             //Model.ImagemCurso ic4 = new Model.ImagemCurso { Descricao = "Imagem 2", Url = "http://www.johncleary.net/wp-content/uploads/2013/06/tictactoe1.png" };

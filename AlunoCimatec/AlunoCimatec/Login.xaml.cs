@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Storage;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -65,8 +66,26 @@ namespace AlunoCimatec
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            StorageFolder pasta = ApplicationData.Current.LocalFolder;
+
+            try
+            {
+                var arq = await pasta.OpenStreamForReadAsync("Senha.txt");
+                if ( arq != null)
+                {
+                    using (StreamReader streamReader = new StreamReader(arq))
+                    {
+                        String texto = streamReader.ReadToEnd();
+                        this.Frame.Navigate(typeof(Cursos));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
         }
 
         /// <summary>
@@ -108,8 +127,26 @@ namespace AlunoCimatec
 
         #endregion
 
-        private void btn_logar_Click(object sender, RoutedEventArgs e)
+        private async void btn_logar_Click(object sender, RoutedEventArgs e)
         {
+
+            StorageFolder pasta = ApplicationData.Current.LocalFolder;
+            try
+            {
+                    var arquivoPessoal = await pasta.CreateFileAsync("Senha.txt", CreationCollisionOption.ReplaceExisting);
+
+                    using (var s = await arquivoPessoal.OpenStreamForWriteAsync())
+                    {
+                        String dados = txt_user.Text + "="  + txt_password.Password;
+                        s.Write(System.Text.Encoding.UTF8.GetBytes(dados.ToCharArray()), 0, dados.Length);
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+
             this.Frame.Navigate(typeof(Cursos));
         }
     }

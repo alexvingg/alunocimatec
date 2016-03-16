@@ -106,6 +106,7 @@
     </Compile>
     <Compile Include="Model\Curso.cs" />
     <Compile Include="Model\Disciplinas.cs" />
+    <Compile Include="Model\ImagemCurso.cs" />
     <Compile Include="Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
     </Compile>
@@ -117,6 +118,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\FotoAula1.jpg" />
+    <Content Include="Assets\Images\FotoAula2.jpg" />
+    <Content Include="Assets\Images\FotoAula3.jpg" />
+    <Content Include="Assets\Images\FotoAula4.jpg" />
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
