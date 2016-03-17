@@ -11,5 +11,7 @@ namespace AlunoCimatec.Model
         public String Nome { get; set; }
 
         public String Professor { get; set; }
+
+        public List<ImagemDisciplina> Imagens { get; set; }
     }
 }

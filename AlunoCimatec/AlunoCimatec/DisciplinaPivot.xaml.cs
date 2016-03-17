@@ -34,30 +34,6 @@ namespace AlunoCimatec
         {
             this.InitializeComponent();
 
-            Model.ImagemCurso ic = new Model.ImagemCurso { Descricao = "Imagem 1", Url = "http://www.codeguru.com/images/article/19489/020320_06.gif",
-                ListImage = new BitmapImage(new Uri(this.BaseUri, "Assets/Images/FotoAula1.jpg"))};
-            //Model.ImagemCurso ic2 = new Model.ImagemCurso { Descricao = "Imagem 2", Url = "http://www.johncleary.net/wp-content/uploads/2013/06/tictactoe1.png" };
-            //Model.ImagemCurso ic3 = new Model.ImagemCurso { Descricao = "Imagem 1", Url = "http://www.codeguru.com/images/article/19489/020320_06.gif" };
-            //Model.ImagemCurso ic4 = new Model.ImagemCurso { Descricao = "Imagem 2", Url = "http://www.johncleary.net/wp-content/uploads/2013/06/tictactoe1.png" };
-
-
-            ObservableCollection<Model.ImagemCurso> listaImagem = new ObservableCollection<Model.ImagemCurso>();
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            listaImagem.Add(ic);
-            //listaImagem.Add(ic2);
-            //listaImagem.Add(ic3);
-            //listaImagem.Add(ic4);
-
-            GridView.ItemsSource = listaImagem;
-
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
@@ -125,6 +101,12 @@ namespace AlunoCimatec
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
+
+            Model.Disciplinas dis = e.Parameter as Model.Disciplinas;
+
+            ObservableCollection<Model.ImagemDisciplina> listaImagem = new ObservableCollection<Model.ImagemDisciplina>(dis.Imagens);
+
+            GridView.ItemsSource = listaImagem;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

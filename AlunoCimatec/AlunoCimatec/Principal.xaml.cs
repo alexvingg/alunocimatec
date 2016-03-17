@@ -85,19 +85,6 @@ namespace AlunoCimatec
         {
         }
 
-        private List<Model.Disciplinas> getListDisciplinas()
-        {
-            List<Model.Disciplinas> lista = new List<Model.Disciplinas>();
-            for (int i = 0; i < 40; i++)
-            {
-                Model.Disciplinas di = new Model.Disciplinas();
-                di.Nome = "Materia " + i;
-                di.Professor = "Professor " + i;
-                lista.Add(di);
-            }
-
-            return lista;
-        }
         #region NavigationHelper registration
 
         /// <summary>
@@ -132,7 +119,6 @@ namespace AlunoCimatec
         }
 
         #endregion
-
         private void MyListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListView li = e.OriginalSource as ListView;
@@ -151,8 +137,7 @@ namespace AlunoCimatec
         private void MyListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             Model.Disciplinas di = e.ClickedItem as Model.Disciplinas;
-
-             this.Frame.Navigate(typeof(DisciplinaPivot), di);
+            this.Frame.Navigate(typeof(DisciplinaPivot), di);
         }
 
 

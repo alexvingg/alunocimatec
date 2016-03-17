@@ -78,6 +78,10 @@ namespace AlunoCimatec
                     using (StreamReader streamReader = new StreamReader(arq))
                     {
                         String texto = streamReader.ReadToEnd();
+                        String usuario = texto.Split('=')[0];
+                        String senha = texto.Split('=')[1];
+                        //txt_password.Password = senha;
+                        //txt_user.Text = usuario;
                         this.Frame.Navigate(typeof(Cursos));
                     }
                 }
@@ -130,21 +134,25 @@ namespace AlunoCimatec
         private async void btn_logar_Click(object sender, RoutedEventArgs e)
         {
 
-            StorageFolder pasta = ApplicationData.Current.LocalFolder;
-            try
-            {
-                    var arquivoPessoal = await pasta.CreateFileAsync("Senha.txt", CreationCollisionOption.ReplaceExisting);
+            if (check_logado.IsChecked == true)
+            {  
+                StorageFolder pasta = ApplicationData.Current.LocalFolder;
+                try
+                {
+                        var arquivoPessoal = await pasta.CreateFileAsync("Senha.txt", CreationCollisionOption.ReplaceExisting);
 
-                    using (var s = await arquivoPessoal.OpenStreamForWriteAsync())
-                    {
-                        String dados = txt_user.Text + "="  + txt_password.Password;
-                        s.Write(System.Text.Encoding.UTF8.GetBytes(dados.ToCharArray()), 0, dados.Length);
-                    }
+                        using (var s = await arquivoPessoal.OpenStreamForWriteAsync())
+                        {
+                            String dados = txt_user.Text + "="  + txt_password.Password;
+                            s.Write(System.Text.Encoding.UTF8.GetBytes(dados.ToCharArray()), 0, dados.Length);
+                        }
                 
-            }
-            catch (Exception ex)
-            {
-                ex.GetBaseException();
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                }
+
             }
 
             this.Frame.Navigate(typeof(Cursos));

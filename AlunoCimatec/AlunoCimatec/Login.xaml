@@ -32,6 +32,7 @@
             <TextBox x:Name="txt_user"></TextBox>
             <TextBlock Text="Senha" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
             <PasswordBox x:Name="txt_password"></PasswordBox>
+            <CheckBox x:Name="check_logado" Content="Manter Logado"></CheckBox>
             <Button x:Name="btn_logar" Content="Logar" Click="btn_logar_Click"></Button>
         </StackPanel>
         

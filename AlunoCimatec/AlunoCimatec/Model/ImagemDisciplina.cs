@@ -7,13 +7,13 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace AlunoCimatec.Model
 {
-    class ImagemCurso
+    public class ImagemDisciplina
     {
         public String Descricao { get; set; }
 
         public String Url { get; set; }
 
-        public BitmapImage ListImage { get; set; }
+        public BitmapImage Image { get; set; }
 
     }
 }
