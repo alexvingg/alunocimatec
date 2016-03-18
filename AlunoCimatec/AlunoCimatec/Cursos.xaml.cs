@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -71,6 +72,22 @@ namespace AlunoCimatec
                 Model.Disciplinas di = new Model.Disciplinas();
                 di.Nome = "Materia " + i;
                 di.Professor = "Professor " + i;
+                di.Imagens = this.getListaImagemDisciplina();
+                lista.Add(di);
+            }
+
+            return lista;
+        }
+
+        private List<Model.ImagemDisciplina> getListaImagemDisciplina()
+        {
+            List<Model.ImagemDisciplina> lista = new List<Model.ImagemDisciplina>();
+
+            for (int i = 1; i < 5; i++)
+            {
+                Model.ImagemDisciplina di = new Model.ImagemDisciplina();
+                di.Descricao = "Imagem " + i;
+                di.Image = new BitmapImage(new Uri(this.BaseUri, "Assets/Images/FotoAula" + i + ".jpg"));
                 lista.Add(di);
             }
 

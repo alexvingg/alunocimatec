@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlunoCimatec.Model
 {
-    public class Curso
+    public class Curso : Model<Curso>
     {
+
         public String Nome { get; set; }
 
         public List<Disciplinas> Disciplinas { get; set; }
